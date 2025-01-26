@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,  initial-scale=1.0">
+    <title>PayLessGainMore.Inc</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="Index.js" defer></script>
+
+    <style>
+        body {
+            display: flex;
+            flex-flow: column nowrap;
+            min-height: 100vh;
+            background-image: linear-gradient(whitesmoke, gray);
+            border: 2px solid black;
+        }
+
+        h2 {
+            text-shadow: 2px 4px 4px rgba(128, 128, 128, 0.61);
+        }
+
+        h2 a {
+            color: black;
+            text-decoration: none;
+        }
+
+        header nav {
+            border-bottom: 2px solid gray;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .bold {
+            font-weight: 500;
+        }
+
+        .class {
+            background-color: black;
+            color: white;
+            border-radius: 5px;
+            margin-right: 4px;
+            margin-left: 4px;
+            padding: 4px 10px;
+        }
+
+        ul {
+            display: flex;
+            flex-direction: row;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        li a {
+            text-decoration: none;
+            color: black;
+            padding-inline: 10px;
+            font-weight: 600;
+        }
+
+        .ri {
+            border: 1px solid black;
+            height: 22px;
+        }
+
+        label {
+            font-weight: 600;
+        }
+
+        p a {
+            font-weight: 600;
+            text-decoration: none;
+            color: black;
+        }
+
+        main {
+            display: flex;
+            flex-grow: 1;
+            flex-flow: column nowrap;
+            display: flow-root;
+        }
+
+        main nav {
+            border-right: 3px solid rgba(128, 128, 128, 0.418);
+            width: 160px;
+            min-height: 77vh;
+            margin-top: 10px;
+            float: left;
+        }
+
+        .rage {
+            display: flex;
+            place-content: center;
+            margin: 9rem;
+            margin-left: 19px;
+        }
+
+        form {
+            position: relative;
+        }
+
+        .right {
+            position: absolute;
+            left: 280px;
+        }
+
+        .page {
+            display: none;
+            flex-flow: row wrap;
+            margin: 1rem;
+        }
+
+        .page p {
+            font-weight: 400;
+        }
+
+        .spark {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-around;
+        }
+
+        img {
+            width: 400px;
+        }
+
+        img:hover,
+        img:focus {
+            transform-origin: top;
+            transition-delay: 0.1s;
+            transition-duration: 0.1s;
+            transition-property: all;
+            transition-timing-function: ease;
+            width: 440px;
+            border: 2px solid black;
+        }
+
+        footer {
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            border-top: 1px solid rgba(0, 0, 0, 0.836);
+            font-weight: 600;
+            background-color: gray;
+        }
+
+        .nowrap {
+            white-space: nowrap;
+        }
+
+        .small {
+            display: none;
+        }
+
+        .dsply {
+            display: block;
+        }
+
+        .software {
+            display: none;
+            position: absolute;
+            top: 200px;
+        }
+
+        .software img {
+            position: absolute;
+            left: 900px;
+        }
+
+        .hardware {
+            display: none;
+            position: absolute;
+            top: 200px;
+        }
+
+        .hardware img {
+            position: absolute;
+            left: 900px;
+        }
+
+        .electronic {
+            display: none;
+            position: absolute;
+            top: 200px;
+        }
+
+        .electronic img {
+            position: absolute;
+            left: 900px;
+        }
+
+        table, tr, td, th {
+            border: 2px solid black;
+            text-align: center;
+            padding: 5px;
+            font-size: 20px;
+        }
+
+        table {
+            margin-bottom: 3rem;
+            margin-inline: 2rem;
+        }
+
+        th {
+            font-weight:900;
+            font-size: 1.4rem;
+        }
+
+        tr, td {
+            font-weight: 600;
+            padding-inline: 25px;
+        }
+
+        .rows {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+        }
+
+        .roll {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            position: relative;
+        }
+
+        .order {
+            display: none;
+            flex-flow: column wrap;
+            position: absolute;
+            top: 130px;
+            left: 10px;
+        }
+
+        .frill {
+            color: black;
+            text-decoration: none;
+            font-size: 1.5rem;
+            margin-left: 5rem;
+        }
+
+        .frill:hover {
+            background-color: black;
+            color: whitesmoke;
+            padding: 3px 10px;
+            border-radius: 10px;
+        }
+
+        .roll p {
+            font-weight: 700;
+        }
+
+        .roll input {
+            outline: none;
+            padding-left: 7px;
+        }
+
+        .ca {
+            margin-right: 6rem;
+        }
+
+        select {
+            outline: none;
+        }
+
+        .secBtn {
+            position: absolute;
+            top: 70px;
+            left: 250px;
+        }
+
+        .thirdForm input {
+            margin-left: 2.5rem;
+        }
+
+        .addressForm {
+            display: none;
+            margin-inline: 10rem;
+            position: relative;
+            top: -280px;
+            left: 100px;
+        }
+
+        .thirdBtn {
+            position: absolute;
+            top: 390px;
+            left: 200px;
+        }
+
+        .aboutUs {
+            display: none;
+            position: absolute;
+            top: 150px;
+            left: 70px;
+        }
+
+        .aboutUs h4 {
+            font-family:'Times New Roman', Times, serif;
+            font-weight: 700;
+            font-size: 2rem;
+        }
+
+        .aboutUs li {
+            list-style-type: disc;
+            margin-left: 30px;
+        }
+
+        .contactUs {
+            margin-inline: 5rem;
+            display: none;
+            position: relative;
+            top: -250px;
+        }
+
+        .contactUs h4 {
+            font-family:'Times New Roman', Times, serif;
+            font-weight: 700;
+            font-size: 2rem;
+        }
+
+        .contactUs h5 {
+            margin: 0;
+            font-size: 22px;
+            font-weight: 700;
+        }
+
+        .contactUs p {
+            margin: 0;
+            font-size: 19px;
+        }
+
+        .contactUs a {
+            color: rgba(0, 0, 0, 0.74);
+            font-weight: 500;
+            font-size: 19px;
+            text-decoration: none;
+        }
+
+        .contactUs a:hover {
+            color: black;
+        }
+
+        .cotRow {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-around;
+        }
+
+        .external {
+            margin-left: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        
+        <h2 class="display-5 bold mb-3 ps-2 biig"><a href="">PayLessGainMore, Inc.</a></h2>
+        <div class="disap">
+        <nav>
+            <ul class="my-2">
+                <li><a href="" class="backgrd">Home</a></li>
+                <div class="ri"></div>
+                <li><a href="" class="ord">Order Now</a></li>
+                <div class="ri"></div>
+                <li><a href="" class="abt">About Us</a></li>
+                <div class="ri"></div>
+                <li><a href="" class="cont">Contact Us</a></li>
+            </ul>
+            <p class="px-2 my-2 d-none d-md-block">
+                <span class="fw-bold">Welcome:</span>
+                <a href="#welcome" id="getIt" class="mx-1">----</a>
+            </p>
+        </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <!-- HOME PAGE -->
+        <section class="page" id="home">
+            <p class="lead text-muted">We at <span class="fw-bold">PayLessGainMore</span> bring more options and opportunity to our customers far and wide with our newly upgraded website, being the leading computer store in the whole of New Jersey, USA, we want our customers to be able to relate to our services and purchase as many computer accessories and gadget as you want. </p>
+            <p class="lead text-muted">Introducing our newly website lauched, we will be giving you a 10% discount of any of our product being purchased directly from our websites, and we have improved more better with all new computer accessories, gadget and softwares, also remember we are quicker,efficient and faster in deliveries, With our staffs giving you the top notch of customers services and trust. We can assure you Trust, Reliability, Assurance & Best in our electonic component. <span class="fw-bold">ORDER FROM US NOW !!!</span></p>
+
+            <div class="external">
+                <a href="" class="btn btn-secondary bold me-4 har">Hardware Page</a>
+                <a href="" class="btn btn-secondary bold me-4 sof">Software Page</a>
+                <a href="" class="btn btn-secondary bold elec">Electronic Goods Page</a>
+            </div>
+
+            <div class="my-3 spark">
+                <img src="img/IMG_9259.JPG" class="mx-2" style="width: 380px;" alt="img">
+                <img src="img/IMG_9260.JPG" class="mx-3 my-3" style="width: 400px; height: 270px;" alt="img">
+                <img src="img/IMG_9262.JPG" class="mx-3 my-1" style="width: 430px; height: 270px;" alt="img">
+                <img src="img/IMG_9265.JPG" class="mx-2 my-3"style="width: 400px; height: 270px;" alt="img">
+                <img src="img/IMG_9263.JPG" class="mx-2 mt-3" style="width: 400px; height: 270px;" alt="img">
+                <img src="img/IMG_9264.JPG" class="mx-2 my-3" alt="img" style="width: 430px; height: 270px;">
+            </div>
+            
+        </section>
+
+
+        <!-- FIRST FORM PAGE -->
+        <section class="rage">
+            <form class="form">
+                
+                <label for="Firstname" class="form-label">Please enter full name to register:</label>
+                <div class="input-group flex-nowrap mb-2">
+                    <span class="input-group-text"><i class="bi bi-person-circle"></i></span>
+                <input type="text" name="Firstname" id="Firstname" class="form-control bold" style="height: 40px; width: 300px;" placeholder="Chima Chibuike..." autocapitalize="on" autocomplete="off" required>
+                </div>
+
+                <label for="username" class="form-label">Insert Username:</label>
+                <div class="input-group flex-nowrap mb-2">
+                    <span class="input-group-text"><i class="bi bi-person-circle"></i></span>
+                <input type="text" name="username" id="username" class="form-control bold inputName" placeholder="@Chima123" autocapitalize="on" autocomplete="off" required>
+                </div>
+
+                <label for="username" class="form-label">Email:</label>
+                <div class="input-group flex-nowrap">
+                    <span class="input-group-text"><i class="bi bi-envelope-check-fill"></i></span>
+                    <input type="email" name="mail" id="mail" class="form-control bold mailcheck" placeholder="@name@example.com" autocapitalize="on" autocomplete="off" required>   
+                </div>
+                <p class="small">"we will send a mail to verify email.."</p>
+
+                <button type="submit" class="btn btn-secondary py-1 right mt-4">Register</button>
+            </form>
+        </section>
+
+
+        <!-- SOFTWARE PAGE -->
+        <section class="software">
+            <div class="rows">
+            <table>
+                <tr>
+                    <th> Item Codes</th>
+                    <th>Description</th>
+                    <th>Price Rate($) <sup>10% off</sup></th>
+                </tr>
+                <tr>
+                    <td>S1PA</td>
+                    <td>Power Archiver</td>
+                    <td>$120</td>
+                </tr>
+                <tr>
+                    <td>S1MSS</td>
+                    <td>Microsoft SQL Server</td>
+                    <td>$110</td>
+                </tr>
+                <tr>
+                    <td>S1SMS</td>
+                    <td>Microsoft System Management Server</td>
+                    <td>$200</td>
+                </tr>
+                <tr>
+                    <td>S1RHL</td>
+                    <td>Red Hat Linux</td>
+                    <td>$180</td>
+                </tr>
+                <tr>
+                    <td>S1MMX</td>
+                    <td>Macromedia MX 2004</td>
+                    <td>$200</td>
+                </tr>
+            </table>
+            <div>
+                <img src="img/IMG_9265.JPG" alt="img" class="me-3" style="height: 250px; width: 400px;">
+            </div>
+        </div>
+            <a href="" class="frill chnge">Click here to order</a>
+        </section>
+        
+
+        <!-- HARDWARE PAGE -->
+        <section class="hardware">
+            <div class="rows">
+            <table>
+                <tr>
+                    <th> Item Codes</th>
+                    <th>Description</th>
+                    <th>Price Rate<sup>10% off</sup></th>
+                </tr>
+                <tr>
+                    <td>H1M</td>
+                    <td>Modem</td>
+                    <td>$80</td>
+                </tr>
+                <tr>
+                    <td>H1C</td>
+                    <td>CD Drive</td>
+                    <td>$50</td>
+                </tr>
+                <tr>
+                    <td>H1F</td>
+                    <td>Floppy Dist Drive</td>
+                    <td>$40</td>
+                </tr>
+                <tr>
+                    <td>H2M</td>
+                    <td>Microprocessor</td>
+                    <td>$100</td>
+                </tr>
+                <tr>
+                    <td>H1HD</td>
+                    <td>Hard Drive</td>
+                    <td>$90</td>
+                </tr>
+            </table>
+            <div>
+                <img src="img/IMG_9264.JPG" alt="img" class="me-3" style="height: 250px; width: 400px;">
+            </div>
+        </div>
+            <a href="" class="frill chnge2">Click here to order</a>
+        </section>
+        
+
+        <!-- ELECTRONIC PAGE -->
+        <section class="electronic">
+            <div class="rows">
+            <table class="">
+                <tr>
+                    <th> Item Codes</th>
+                    <th>Description</th>
+                    <th>Price Rate<sup>10% off</sup></th>
+                </tr>
+                <tr>
+                    <td>E1W</td>
+                    <td>Sports Watch</td>
+                    <td>$50</td>
+                </tr>
+                <tr>
+                    <td>E1SC</td>
+                    <td>Scientific Calculator</td>
+                    <td>$30</td>
+                </tr>
+                <tr>
+                    <td>E1DD</td>
+                    <td>Digital Dairy</td>
+                    <td>$75</td>
+                </tr>
+                <tr>
+                    <td>E1DC</td>
+                    <td>Digital Camera</td>
+                    <td>$270</td>
+                </tr>
+                <tr>
+                    <td>E1CP</td>
+                    <td>Cellular Phone</td>
+                    <td>$200</td>
+                </tr>
+            </table>
+            <div>
+                <img src="img/IMG_9261.JPG" alt="img" class="" style="height: 250px; width: 400px;">
+            </div>
+        </div>
+            <a href="" class="frill chnge3">Click here to order</a>
+        </section>
+
+
+        <!-- ORDERFORM PAGE -->
+        <section class="order mx-5 my-3">
+            <p class="lead text-muted bold text-center">Please provide the order details:</p>
+            <div class="roll my-3">
+                <p class="lead bold me-5">S. No.</p>
+                <label for="cart" class="lead bold ca">Category</label>
+                <label for="item" class="lead bold me-5 ms-5">Item</label>
+                <label for="price" class="lead bold me-5 ms-5">Price($)</label>
+                <label for="quantity" class="lead bold">Quantity</label>
+            </div>
+
+            <form id="secondForm" class="roll mb-1">
+                <p class="ca">1.</p>
+                <p class="me-5">
+                    <select name="cart" id="cart" class="rounded px-3 bold">
+                        <option value="none" disabled selected>--Select--</option>
+                        <option value="hardware">Hardware</option>
+                        <option value="software">Software</option>
+                        <option value="electronic">Electronic Goods</option>
+                    </select>
+                </p>
+
+                <p>
+                    <select name="item" id="item" class="rounded bold col-11">
+                        <option value="none" disabled selected>--Select--</option>
+                        <option value="hardware">H1M</option>
+                        <option value="hardware">H1C</option>
+                        <option value="hardware">H1F</option>
+                        <option value="hardware">H2M</option>
+                        <option value="hardware">H1HD</option>
+                        <option value="software">S1PA</option>
+                        <option value="software">S1MSS</option>
+                        <option value="software">S1SMS</option>
+                        <option value="software">S1RHL</option>
+                        <option value="software">S1MMX</option>
+                        <option value="electronic">E1W</option>
+                        <option value="electronic">E1SC</option>
+                        <option value="electronic">E1DD</option>
+                        <option value="electronic">E1DC</option>
+                        <option value="electronic">E1CP</option>
+                    </select>
+                </p>
+
+                <p class="me-5 ms-5">
+                    <input type="text" name="price" id="price" style="width: 70px; height: 21px;" autocomplete="off" placeholder="$0.00" class="rounded border-0">
+                </p>
+
+                <p class="ms-2">
+                    <select name="quantity" id="quantity" class="rounded px-1">
+                        <option value="quantity" selected disabled>0</option>
+                        <option value="quantity">1</option>
+                        <option value="quantity">2</option>
+                        <option value="quantity">3</option>
+                        <option value="quantity">4</option>
+                        <option value="quantity">5</option>
+                    </select>
+                </p>
+                
+            </div>
+            <div class="roll mb-1">
+                <p class="ca">2.</p>
+                <p class="me-5">
+                    <select name="cart" id="cart" class="rounded px-3 bold">
+                        <option value="none" disabled selected>--Select--</option>
+                        <option value="hardware">Hardware</option>
+                        <option value="software">Software</option>
+                        <option value="electronic">Electronic Goods</option>
+                    </select>
+                </p>
+
+                <p>
+                    <select name="item" id="item" class="rounded bold col-11">
+                        <option value="none" disabled selected>--Select--</option>
+                        <option value="hardware">H1M</option>
+                        <option value="hardware">H1C</option>
+                        <option value="hardware">H1F</option>
+                        <option value="hardware">H2M</option>
+                        <option value="hardware">H1HD</option>
+                        <option value="software">S1PA</option>
+                        <option value="software">S1MSS</option>
+                        <option value="software">S1SMS</option>
+                        <option value="software">S1RHL</option>
+                        <option value="software">S1MMX</option>
+                        <option value="electronic">E1W</option>
+                        <option value="electronic">E1SC</option>
+                        <option value="electronic">E1DD</option>
+                        <option value="electronic">E1DC</option>
+                        <option value="electronic">E1CP</option>
+                    </select>
+                </p>
+
+                <p class="me-5 ms-5">
+                    <input type="text" name="price" id="price" style="width: 70px; height: 21px;" autocomplete="off" placeholder="$0.00" class="rounded border-0">
+                </p>
+
+                <p class="ms-2">
+                    <select name="quantity" id="quantity" class="rounded px-1">
+                        <option value="quantity" selected disabled>0</option>
+                        <option value="quantity">1</option>
+                        <option value="quantity">2</option>
+                        <option value="quantity">3</option>
+                        <option value="quantity">4</option>
+                        <option value="quantity">5</option>
+                    </select>
+                </p>
+                
+            </div>
+            <div class="roll mb-1">
+                <p class="ca">3.</p>
+                <p class="me-5">
+                    <select name="cart" id="cart" class="rounded px-3 bold">
+                        <option value="none" disabled selected>--Select--</option>
+                        <option value="hardware">Hardware</option>
+                        <option value="software">Software</option>
+                        <option value="electronic">Electronic Goods</option>
+                    </select>
+                </p>
+
+                <p>
+                    <select name="item" id="item" class="rounded bold col-11">
+                        <option value="none" disabled selected>--Select--</option>
+                        <option value="hardware">H1M</option>
+                        <option value="hardware">H1C</option>
+                        <option value="hardware">H1F</option>
+                        <option value="hardware">H2M</option>
+                        <option value="hardware">H1HD</option>
+                        <option value="software">S1PA</option>
+                        <option value="software">S1MSS</option>
+                        <option value="software">S1SMS</option>
+                        <option value="software">S1RHL</option>
+                        <option value="software">S1MMX</option>
+                        <option value="electronic">E1W</option>
+                        <option value="electronic">E1SC</option>
+                        <option value="electronic">E1DD</option>
+                        <option value="electronic">E1DC</option>
+                        <option value="electronic">E1CP</option>
+                    </select>
+                </p>
+
+                <p class="me-5 ms-5">
+                    <input type="text" name="price" id="price" style="width: 70px; height: 21px;" autocomplete="off" placeholder="$0.00" class="rounded border-0">
+                </p>
+
+                <p class="ms-2">
+                    <select name="quantity" id="quanti" class="rounded px-1">
+                        <option value="quantity" selected disabled>0</option>
+                        <option value="quantity">1</option>
+                        <option value="quantity">2</option>
+                        <option value="quantity">3</option>
+                        <option value="quantity">4</option>
+                        <option value="quantity">5</option>
+                    </select>
+                </p>
+                
+            </div>
+            <div class="roll mb-1">
+                <p class="ca">4.</p>
+                <p class="me-5">
+                    <select name="cart" id="cart" class="rounded px-3 bold">
+                        <option value="none" disabled selected>--Select--</option>
+                        <option value="hardware">Hardware</option>
+                        <option value="software">Software</option>
+                        <option value="electronic">Electronic Goods</option>
+                    </select>
+                </p>
+
+                <p>
+                    <select name="item" id="item" class="rounded bold col-11">
+                        <option value="none" disabled selected>--Select--</option>
+                        <option value="hardware">H1M</option>
+                        <option value="hardware">H1C</option>
+                        <option value="hardware">H1F</option>
+                        <option value="hardware">H2M</option>
+                        <option value="hardware">H1HD</option>
+                        <option value="software">S1PA</option>
+                        <option value="software">S1MSS</option>
+                        <option value="software">S1SMS</option>
+                        <option value="software">S1RHL</option>
+                        <option value="software">S1MMX</option>
+                        <option value="electronic">E1W</option>
+                        <option value="electronic">E1SC</option>
+                        <option value="electronic">E1DD</option>
+                        <option value="electronic">E1DC</option>
+                        <option value="electronic">E1CP</option>
+                    </select>
+                </p>
+
+                <p class="me-5 ms-5">
+                    <input type="text" name="price" id="price" style="width: 70px; height: 21px;" autocomplete="off" placeholder="$0.00" class="rounded border-0">
+                </p>
+
+                <p class="ms-2">
+                    <select name="quantity" id="quant" class="rounded px-1">
+                        <option value="quantity" selected disabled>0</option>
+                        <option value="quantity">1</option>
+                        <option value="quantity">2</option>
+                        <option value="quantity">3</option>
+                        <option value="quantity">4</option>
+                        <option value="quantity">5</option>
+                    </select>
+                </p>
+                
+            </div>
+            <div class="roll mb-1">
+                <p class="ca">5.</p>
+                <p class="me-5">
+                    <select name="cart" id="cart" class="rounded px-3 bold">
+                        <option value="none" disabled selected>--Select--</option>
+                        <option value="hardware">Hardware</option>
+                        <option value="software">Software</option>
+                        <option value="electronic">Electronic Goods</option>
+                    </select>
+                </p>
+
+                <p>
+                    <select name="item" id="item" class="rounded bold col-11">
+                        <option value="none" disabled selected>--Select--</option>
+                        <option value="hardware">H1M</option>
+                        <option value="hardware">H1C</option>
+                        <option value="hardware">H1F</option>
+                        <option value="hardware">H2M</option>
+                        <option value="hardware">H1HD</option>
+                        <option value="software">S1PA</option>
+                        <option value="software">S1MSS</option>
+                        <option value="software">S1SMS</option>
+                        <option value="software">S1RHL</option>
+                        <option value="software">S1MMX</option>
+                        <option value="electronic">E1W</option>
+                        <option value="electronic">E1SC</option>
+                        <option value="electronic">E1DD</option>
+                        <option value="electronic">E1DC</option>
+                        <option value="electronic">E1CP</option>
+                    </select>
+                </p>
+
+                <p class="me-5 ms-5">
+                    <input type="text" name="price" id="price" style="width: 70px; height: 21px;" autocomplete="off" placeholder="$0.00" class="rounded border-0">
+                </p>
+
+                <p class="ms-2">
+                    <select name="quantity" id="quantity" class="rounded px-1">
+                        <option value="quantity" selected disabled>0</option>
+                        <option value="quantity">1</option>
+                        <option value="quantity">2</option>
+                        <option value="quantity">3</option>
+                        <option value="quantity">4</option>
+                        <option value="quantity">5</option>
+                    </select>
+                </p>
+                <div class="secBtn">
+                    <button type="submit" class="btn btn-secondary mx-2">Submit</button>
+                    <button type="reset" class="btn btn-secondary">Reset Form</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- ADDRESSFROM PAGE -->
+        <section class="addressForm">
+            <h4 class="lead bold mb-4 pt-3">Please provide your billing and shipping address:</h4>
+
+            <form class="thirdForm mx-5">
+                <p class="mb-2">
+                    <label for="name" class="form-label text-muted">Name</label>
+                    <input type="text" name="name" id="name" class="rounded border-2 form-control bold" style="width: 250px; height: 25px;" autocomplete="off" required>
+                </p>
+                <p class="mb-2">
+                    <label for="address" class="form-label text-muted">Address</label>
+                    <input type="text" name="address" id="address" style="width: 310px; height: 25px;" autocomplete="off" class="rounded border-2 form-control bold" required>
+                </p>
+                <p class="mb-2">
+                    <label for="city" class="form-label text-muted">City</label>
+                    <input type="text" name="city" id="city" style="width: 310px; height: 25px;" autocomplete="off" class="rounded border-2 form-control bold">
+                </p>
+                <p class="mb-2">
+                    <label for="state" class="form-label text-muted">State/Province</label>
+                    <input type="text" name="state" id="state" style="width: 310px; height: 25px;" autocomplete="off" class="rounded border-2 form-control bold" required>
+                </p>
+                <p class="mb-2">
+                    <label for="postal" class="form-label text-muted">Zip/Postal Code</label>
+                    <input type="text" name="postal" id="postal" style="width: 150px; height: 25px;" autocomplete="off" class="rounded border-2 form-control bold">
+                </p>
+                <p class="mb-2">
+                    <label for="country" class="text-muted ">Country</label>
+                    <p class="mx-4">
+                        <select name="country" id="country" class="rounded px-2 bold" style="width: 250px;">
+                        <option value="none" disabled selected>Select One</option>
+                        <option value="usa">United States</option>
+                        <option value="nig">Nigeria</option>
+                        <option value="alg">Algeria</option>
+                        <option value="gh">Ghana</option>
+                        <option value="saf">South Africa</option>
+                        <option value="mox">Mozambique</option>
+                        <option value="can">Canada</option>
+                        <option value="jam">Jamaica</option>
+                        <option value="ken">Kenya</option>
+                        <option value="mor">Morocco</option>
+                        <option value="mad">Madagascar</option>
+                        <option value="rwa">Rwanda</option>
+                        <option value="tog">Togo</option>
+                        <option value="uk">United Kingdom</option>
+                        <option value="bel">Belgium</option>
+                        <option value="Den">Denmark</option>
+                        <option value="ger">Germany</option>
+                        </select>
+                    </p>
+                </p>
+                <div class="thirdBtn mt-1">
+                    <button type="submit" class="btn btn-secondary me-3" data-bs-toggle="modal" data-bs-target="#reg-modal">Submit Info</button>
+                    <button type="reset" class="btn btn-secondary">Reset Info</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Modal -->
+        <div class="modal fade" id="reg-modal" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-4" id="modal-title bolder">Order Approved</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        Your Order has been approved
+                    </p>
+                    <p class="text-center fw-bolder fs-4">
+                        Delivery Under 24HRS
+                    </p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary py-1 fw-bold" data-bs-dismiss="modal">Thank you for Shopping<span class="fs-4">🛒</span></button>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <!-- ABOUT-US PAGE -->
+        <section class="aboutUs">
+            <h4 class="mb-3">About Us:</h4>
+
+            <li class="mb-3 bold">PayLessGainMore is a leading computer store in New Jersey, USA.</li>
+            <li class="mb-3 bold">We sell all types of computer hardware, peripherals, software, and electronic goods.</li>
+            <li class="mb-3 bold">We provide the customer with a complete range of quality products at the best competitive prices.</li>
+            <li class="mb-3 bold">In Sep 2024, we lauch our new upgraded website that allows customers to conveniently shop online faster and easier.</li>
+        </section>
+
+        <!-- CONTACT-US PAGE -->
+        <section class="contactUs">
+            <h4 class="mb-3">Contact Us</h4>
+
+            <div class="cotRow container-lg">
+                <div class="mb-5">
+                    <h5>Corporate Address:</h5>
+
+                    <p class="bold text-muted ttx">PayLessGainMore, Inc.</p>
+        
+                    <i>
+                        <p class="bold text-muted"><i class="bi bi-geo-alt-fill me-1"></i>231, Cherry Hill,</p>
+                        <p class="bold text-muted ms-4">New Jersey,</p>
+                        <p class="bold text-muted ms-4">USA.</p>
+                        <p class="bold text-muted ms-4">Phone: (208) 165-7603</p>
+                        <p class="bold text-muted ms-4">Fax: (208) 165-7604</p>
+                    </i>
+                </div>
+
+                <div class="mb-5 ms-4">
+                    <h5>Contact Online:</h5>
+                    <i class="bi bi-telephone-fill"></i>
+                    <a href="tel:+1 800-538-3373" class="ms-2">Call 800-538-3373 in the US</a>
+                </div>
+
+                <div class="ms-3 mb-5">
+                    <h5>E-Mail: </h5>
+
+                    
+                    <p class="bold text-muted">Support:
+                        <a href="mailto:chimachibuike200@gmail.com" class="ms-2"><i class="bi bi-envelope-check pe-2"></i>supportpaylessgainmore@hotmail.com</a>
+                    </p>
+
+                    <p class="bold text-muted">Sales:
+                        <a href="mailto:sales@paylessgainmore.com" class="ms-2"><i class="bi bi-envelope-check pe-2"></i>salespaylessgainmore@hotmail.com</a>
+                    </p>
+
+                    <p class="bold text-muted">Enquiry:
+                        <a href="mailto:enquiry@paylessgainmore.com" class="ms-2"><i class="bi bi-envelope-check pe-2"></i>enquirypaylessgainmore@hotmail.com</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+
+    <footer class="ps-2">
+        <span class="nowrap mb-1">Copyright &copy; <time id="year"></time> </span>
+        <span class="nowrap">[PayLessGainMore, Inc.]. All rights reserved.</span>
+    </footer>
+</body>
+</html>
